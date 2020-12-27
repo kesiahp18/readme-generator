@@ -1,7 +1,6 @@
 module.exports = templateData => {
     const { projectName, ...data } = templateData;
-    return `
-# ${projectName}
+    return `# ${projectName}
 ## Description
 ${data.description}
 ## Table of Contents
