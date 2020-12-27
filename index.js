@@ -1,13 +1,38 @@
 const inquirer = require('inquirer');
 const fs = require('fs');
+const generatePage = require('./src/md-template.js');
 
 const promptUser = () => {
     return inquirer
     .prompt ([
         {
             type: 'input',
-            name: 'name',
-            message: 'What is your projects name?',
+            name: 'username',
+            message: 'What is your GitHub username?',
+            validate: username => {
+                if (username) {
+                    return true;
+                } else {
+                    console.log('\nPlease enter your username');
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'email',
+            message: 'What is your email?',
+            validate: email => {
+                if (email) {
+                    return true;
+                } else {
+                    console.log('\nPlease enter your email');
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'projectName',
+            message: 'What is the name of your project?',
             validate: projectName => {
                 if (projectName) {
                     return true;
@@ -28,8 +53,71 @@ const promptUser = () => {
                     console.log('\nPlease enter a description of your project');
                 }
             }
+        },
+        {
+            type: 'input',
+            name: 'installation',
+            message: 'What are the steps to install your project and get it running?',
+            validate: installation => {
+                if (installation) {
+                    return true;
+                } else {
+                    console.log('\nPlease include a description of the installation process')
+                }
+            }
+        },
+        {
+            type: 'input',
+            name: 'usage',
+            message: 'Provide instructions on how to use your project',
+            validate: usage => {
+                if (usage) {
+                    return true;
+                } else {
+                    console.log("Please include instructions to use your project");
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirmCollab',
+            message: 'Did any collaborators contribute to this project, or use any third-party assets that require aknowledgement?',
+            default: true
+        },
+        {
+            type: 'input',
+            name: 'collab',
+            message: 'Include the name/title of the contributor as well as a link their GitHub',
+            when: ({confirmCollab}) => {
+                if (confirmCollab) {
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        },
+        {
+            type: 'confirm',
+            name: 'confirtTable',
+            message: 'Would you like to include a table of contents? (Recommended)',
+            default: true
+        },
+        {
+            type: 'checkbox',
+            name: 'licenses',
+            message: 'What kind of license should your project have?',
+            choices: ['MIT License', 'Apache 2.0', 'GPL 3.0', 'BSD 3', 'None']
         }
     ])
 };
 
-promptUser();
+promptUser()
+.then (readmeData => {
+    const pageMd = generatePage(readmeData);
+
+    fs.writeFile('README.md', generatePage(readmeData), err => {
+        if(err) throw err;
+        console.log('Page created! Check out README.md in this directory to see it!');
+    })
+});
