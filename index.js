@@ -80,17 +80,11 @@ const promptUser = () => {
             }
         },
         {
-            type: 'confirm',
-            name: 'confirmCollab',
-            message: 'Did any collaborators contribute to this project, or use any third-party assets that require aknowledgement?',
-            default: true
-        },
-        {
             type: 'input',
             name: 'collab',
             message: 'Include the name/title of the contributor as well as a link their GitHub',
-            when: ({confirmCollab}) => {
-                if (confirmCollab) {
+            validate: collab => {
+                if (collab) {
                     return true;
                 } else {
                     return false;
@@ -98,10 +92,17 @@ const promptUser = () => {
             }
         },
         {
-            type: 'confirm',
-            name: 'confirtTable',
-            message: 'Would you like to include a table of contents? (Recommended)',
-            default: true
+            type: 'input',
+            name: 'tests',
+            message: 'What commands should be run to test this application?',
+            validate: tests => {
+                if (tests) {
+                    return true;
+                } else {
+                    console.log("Please include commands to test your project");
+                    return false;
+                }
+            }
         },
         {
             type: 'checkbox',

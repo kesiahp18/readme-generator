@@ -18,13 +18,15 @@ ${data.usage}
 
 
 ## License
-${data.license}
-
+${data.licenses} 
 ## Contributing
+${data.contribu}
 
 ## Tests
+${data.tests}
 
 ## Questions?
 If you have any questions send an email to ${data.email} to have your questions answered.
+Also visit my [GitHub profile](github.com/${data.username})
 `;
 };
