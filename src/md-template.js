@@ -16,11 +16,11 @@ ${data.installation}
 ## Usage
 ${data.usage}
 
-
 ## License
 ${data.licenses} 
+
 ## Contributing
-${data.contribu}
+${data.collab}
 
 ## Tests
 ${data.tests}

@@ -82,7 +82,7 @@ const promptUser = () => {
         {
             type: 'input',
             name: 'collab',
-            message: 'Include the name/title of the contributor as well as a link their GitHub',
+            message: 'Include the name/title of any contributors to the project',
             validate: collab => {
                 if (collab) {
                     return true;

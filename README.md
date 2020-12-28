@@ -1,28 +1,13 @@
-# f
+# readme-generator
 ## Description
-f
+This application allows the user to generate a README file for their GitHub projects using the command line.
 ## Table of Contents
-* [Installation](github.com/k/f#installation)
-* [Usage](github.com/k/f#usage)
-* [License](github.com/k/f#license)
-* [Contributing](github.com/k/f#contributing)
-* [Tests](github.com/k/f#tests)
-* [Questions](github.com/k/f#questions)
+* [Usage](github.com/kesiahp18/readme-generator#usage)
+* [Questions](github.com/kesiahp18/readme-generator#questions)
     
-## Installation 
-f
 ## Usage
-f
-
-
-## License
-MIT License 
-## Contributing
-undefined
-
-## Tests
-f
+Make sure you have Node.js installed as this is a node application.
 
 ## Questions?
 If you have any questions send an email to f to have your questions answered.
-Also visit my [GitHub profile](github.com/k)
+Also visit my [GitHub profile](github.com/kesiahp18)
