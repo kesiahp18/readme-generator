@@ -2,8 +2,8 @@
 ## Description
 This application allows the user to generate a README file for their GitHub projects using the command line.
 ## Table of Contents
-* [Usage](github.com/kesiahp18/readme-generator#usage)
-* [Questions](github.com/kesiahp18/readme-generator#questions)
+* [Usage](https://github.com/kesiahp18/readme-generator#usage)
+* [Questions](https://github.com/kesiahp18/readme-generator#questions)
     
 ## Usage
 Make sure you have Node.js installed as this is a node application.

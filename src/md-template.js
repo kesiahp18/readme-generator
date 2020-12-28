@@ -4,12 +4,12 @@ module.exports = templateData => {
 ## Description
 ${data.description}
 ## Table of Contents
-* [Installation](github.com/${data.username}/${projectName}#installation)
-* [Usage](github.com/${data.username}/${projectName}#usage)
-* [License](github.com/${data.username}/${projectName}#license)
-* [Contributing](github.com/${data.username}/${projectName}#contributing)
-* [Tests](github.com/${data.username}/${projectName}#tests)
-* [Questions](github.com/${data.username}/${projectName}#questions)
+* [Installation](https://github.com/${data.username}/${projectName}#installation)
+* [Usage](https://github.com/${data.username}/${projectName}#usage)
+* [License](https://github.com/${data.username}/${projectName}#license)
+* [Contributing](https://github.com/${data.username}/${projectName}#contributing)
+* [Tests](https://github.com/${data.username}/${projectName}#tests)
+* [Questions](https://github.com/${data.username}/${projectName}#questions)
     
 ## Installation 
 ${data.installation}
@@ -27,6 +27,6 @@ ${data.tests}
 
 ## Questions?
 If you have any questions send an email to ${data.email} to have your questions answered.
-Also visit my [GitHub profile](github.com/${data.username})
+Also visit my [GitHub profile](https://github.com/${data.username})
 `;
 };
